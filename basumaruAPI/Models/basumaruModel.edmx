@@ -1,0 +1,169 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="basumaruModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Basutei">
+          <Key>
+            <PropertyRef Name="BasuteiId" />
+          </Key>
+          <Property Name="BasuteiId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="kigyou" Type="nvarchar" MaxLength="100" />
+          <Property Name="rosenmei" Type="nvarchar" MaxLength="200" />
+          <Property Name="basuteimei" Type="nvarchar" MaxLength="100" />
+          <Property Name="ido" Type="float" Nullable="false" />
+          <Property Name="keido" Type="float" Nullable="false" />
+          <Property Name="yaneFlg" Type="nvarchar" MaxLength="1" />
+          <Property Name="benchiFlg" Type="nvarchar" MaxLength="1" />
+          <Property Name="noriba" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="Jikokuhyou">
+          <Key>
+            <PropertyRef Name="JikokuhyouId" />
+          </Key>
+          <Property Name="JikokuhyouId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="kigyou" Type="nvarchar" MaxLength="100" />
+          <Property Name="rosenmei" Type="nvarchar" MaxLength="200" />
+          <Property Name="ikisaki" Type="nvarchar" MaxLength="100" />
+          <Property Name="hidukebunrui" Type="nvarchar" MaxLength="20" />
+          <Property Name="basuteimei" Type="nvarchar" MaxLength="100" />
+          <Property Name="zikoku" Type="nvarchar" MaxLength="4" />
+          <Property Name="hachakuKubun" Type="nvarchar" MaxLength="1" />
+        </EntityType>
+        <EntityType Name="Rosen">
+          <Key>
+            <PropertyRef Name="RosenId" />
+          </Key>
+          <Property Name="RosenId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="kigyou" Type="nvarchar" MaxLength="100" />
+          <Property Name="rosenmei" Type="nvarchar" MaxLength="200" />
+          <Property Name="hidukebunrui" Type="nvarchar" MaxLength="20" />
+          <Property Name="kigoui" Type="nvarchar" MaxLength="10" />
+          <Property Name="komento" Type="nvarchar" MaxLength="200" />
+        </EntityType>
+        <EntityContainer Name="basumaruModelStoreContainer">
+          <EntitySet Name="Basutei" EntityType="Self.Basutei" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Jikokuhyou" EntityType="Self.Jikokuhyou" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Rosen" EntityType="Self.Rosen" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="basumaruModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Basutei">
+          <Key>
+            <PropertyRef Name="BasuteiId" />
+          </Key>
+          <Property Name="BasuteiId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="kigyou" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="rosenmei" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="basuteimei" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ido" Type="Double" Nullable="false" />
+          <Property Name="keido" Type="Double" Nullable="false" />
+          <Property Name="yaneFlg" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="benchiFlg" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="noriba" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Jikokuhyou">
+          <Key>
+            <PropertyRef Name="JikokuhyouId" />
+          </Key>
+          <Property Name="JikokuhyouId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="kigyou" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="rosenmei" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="ikisaki" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="hidukebunrui" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="basuteimei" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="zikoku" Type="String" MaxLength="4" FixedLength="false" Unicode="true" />
+          <Property Name="hachakuKubun" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Rosen">
+          <Key>
+            <PropertyRef Name="RosenId" />
+          </Key>
+          <Property Name="RosenId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="kigyou" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="rosenmei" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="hidukebunrui" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="kigoui" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="komento" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="basumaruEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Basutei" EntityType="Self.Basutei" />
+          <EntitySet Name="Jikokuhyou" EntityType="Self.Jikokuhyou" />
+          <EntitySet Name="Rosen" EntityType="Self.Rosen" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="basumaruModelStoreContainer" CdmEntityContainer="basumaruEntities">
+          <EntitySetMapping Name="Basutei">
+            <EntityTypeMapping TypeName="basumaruModel.Basutei">
+              <MappingFragment StoreEntitySet="Basutei">
+                <ScalarProperty Name="BasuteiId" ColumnName="BasuteiId" />
+                <ScalarProperty Name="kigyou" ColumnName="kigyou" />
+                <ScalarProperty Name="rosenmei" ColumnName="rosenmei" />
+                <ScalarProperty Name="basuteimei" ColumnName="basuteimei" />
+                <ScalarProperty Name="ido" ColumnName="ido" />
+                <ScalarProperty Name="keido" ColumnName="keido" />
+                <ScalarProperty Name="yaneFlg" ColumnName="yaneFlg" />
+                <ScalarProperty Name="benchiFlg" ColumnName="benchiFlg" />
+                <ScalarProperty Name="noriba" ColumnName="noriba" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Jikokuhyou">
+            <EntityTypeMapping TypeName="basumaruModel.Jikokuhyou">
+              <MappingFragment StoreEntitySet="Jikokuhyou">
+                <ScalarProperty Name="JikokuhyouId" ColumnName="JikokuhyouId" />
+                <ScalarProperty Name="kigyou" ColumnName="kigyou" />
+                <ScalarProperty Name="rosenmei" ColumnName="rosenmei" />
+                <ScalarProperty Name="ikisaki" ColumnName="ikisaki" />
+                <ScalarProperty Name="hidukebunrui" ColumnName="hidukebunrui" />
+                <ScalarProperty Name="basuteimei" ColumnName="basuteimei" />
+                <ScalarProperty Name="zikoku" ColumnName="zikoku" />
+                <ScalarProperty Name="hachakuKubun" ColumnName="hachakuKubun" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Rosen">
+            <EntityTypeMapping TypeName="basumaruModel.Rosen">
+              <MappingFragment StoreEntitySet="Rosen">
+                <ScalarProperty Name="RosenId" ColumnName="RosenId" />
+                <ScalarProperty Name="kigyou" ColumnName="kigyou" />
+                <ScalarProperty Name="rosenmei" ColumnName="rosenmei" />
+                <ScalarProperty Name="hidukebunrui" ColumnName="hidukebunrui" />
+                <ScalarProperty Name="kigoui" ColumnName="kigoui" />
+                <ScalarProperty Name="komento" ColumnName="komento" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="なし" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
