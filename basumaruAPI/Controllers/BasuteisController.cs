@@ -37,6 +37,31 @@ namespace basumaruAPI.Controllers
             return Ok(basutei);
         }
 
+        // GET: api/Basuteis/[運営企業]/[路線名]/
+        //create ookubo.jin
+        [ResponseType(typeof(Basutei))]
+        public IHttpActionResult GetBasutei(string kigyou,string rosenmei)
+        {
+
+            //[運営企業]/[路線名]で検索
+            var basutei = from p in db.Basutei
+                       where p.kigyou == kigyou & p.rosenmei == rosenmei
+                       orderby p.ido
+                       select p;
+
+            //foreach (Basutei bs in basutei) {
+            //    return Ok(bs);
+            //}
+
+            //if (basutei == null)
+            //{
+            //    return NotFound();
+            //}
+
+            return Ok(basutei);
+
+        }
+
         // PUT: api/Basuteis/5
         [ResponseType(typeof(void))]
         public IHttpActionResult PutBasutei(int id, Basutei basutei)
@@ -51,7 +76,7 @@ namespace basumaruAPI.Controllers
                 return BadRequest();
             }
 
-            db.Entry(basutei).State = EntityState.Modified;
+            db.Entry(basutei).State = System.Data.Entity.EntityState.Modified;
 
             try
             {

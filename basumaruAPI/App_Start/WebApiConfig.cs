@@ -19,11 +19,18 @@ namespace basumaruAPI
             // Web API ルート
             config.MapHttpAttributeRoutes();
 
+            //config.Routes.MapHttpRoute(
+            //    name: "DefaultApi",
+            //    routeTemplate: "api/{controller}/{id}",
+            //    defaults: new { id = RouteParameter.Optional }
+            //);
+
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",
-                routeTemplate: "api/{controller}/{id}",
-                defaults: new { id = RouteParameter.Optional }
+                routeTemplate: "api/{controller}/{kigyou}/{rosenmei}",
+                defaults: new { kigyou = RouteParameter.Optional, rosenmei = RouteParameter.Optional }
             );
+
         }
     }
 }
