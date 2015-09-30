@@ -46,7 +46,7 @@ namespace basumaruAPI.Controllers
             //[運営企業]/[路線名]で検索
             var basutei = from p in db.Basutei
                        where p.kigyou == kigyou & p.rosenmei == rosenmei
-                       orderby p.ido
+                       orderby p.BasuteiId
                        select p;
 
             //foreach (Basutei bs in basutei) {
