@@ -27,8 +27,8 @@ namespace basumaruAPI
 
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",
-                routeTemplate: "api/{controller}/{kigyou}/{rosenmei}",
-                defaults: new { kigyou = RouteParameter.Optional, rosenmei = RouteParameter.Optional }
+                routeTemplate: "api/{controller}/{kigyou}/{rosenmei}/{ikisaki}",
+                defaults: new { kigyou = RouteParameter.Optional, rosenmei = RouteParameter.Optional, ikisaki = RouteParameter.Optional}
             );
 
         }

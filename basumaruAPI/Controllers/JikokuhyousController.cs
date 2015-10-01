@@ -37,15 +37,15 @@ namespace basumaruAPI.Controllers
             return Ok(jikokuhyou);
         }
 
-        // GET: api/Jikokuhyous/[運営企業]/[路線名]/
+        // GET: api/Jikokuhyous/[運営企業]/[路線名]/[路線名]/[行き先]/[日付分類]/
         //create ookubo.jin
         [ResponseType(typeof(Jikokuhyou))]
-        public IHttpActionResult GetJikokuhyou(string kigyou,string rosenmei)
+        public IHttpActionResult GetJikokuhyou(string kigyou,string rosenmei,string ikisaki,string hidukebunrui)
         {
 
-            //[運営企業]/[路線名]で検索
+            //[運営企業]/[路線名]/[行き先]/[日付分類]で検索
             var jikokuhyou = from p in db.Jikokuhyou
-                       where p.kigyou == kigyou & p.rosenmei == rosenmei
+                       where p.kigyou == kigyou & p.rosenmei == rosenmei & p.ikisaki == ikisaki & p.hidukebunrui == hidukebunrui
                        orderby p.JikokuhyouId
                        select p;
 
