@@ -40,6 +40,7 @@ namespace basumaruAPI.Controllers
         // GET: api/Jikokuhyous/[運営企業]/[路線名]/[路線名]/[行き先]/[日付分類]/
         //create ookubo.jin
         [ResponseType(typeof(Jikokuhyou))]
+
         public IHttpActionResult GetJikokuhyou(string kigyou,string rosenmei,string ikisaki,string hidukebunrui)
         {
 
